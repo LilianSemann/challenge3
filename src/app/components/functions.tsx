@@ -7,7 +7,3 @@ export function insertTodo( todo: TodoTypes, todos: TodoTypes[] ) {
 export function updateTodo() {
 
 }
-
-export function deleteTodo() {
-
-}
