@@ -1,0 +1,19 @@
+3. Next Task List:
+	- Sabe o que é e pra que serve uma branch?
+	- Sabe criar e trocar de branch?
+	- Sabe como criar uma variável?
+		- Sabe a diferença entre let e const?
+        
+	- Sabe usar o useState pra manipular o estado da aplicação?
+	- Sabe criar arrays e pegar seus items?
+	- Sabe usar o método .map() para percorrer os itens de um array?
+	- Sabe usar o método .filter() para filtrar os itens de um array?
+	- Sabe remover itens de um array?
+	- Sabe criar e usar funções?
+		- Sabe chamar funções
+		- Sabe Passar argumentos para uma função?
+
+	- Sabe adicionar novos itens em um array?
+	- Sabe editar os itens?
+	- Sabe limpar a lista?
+	- Sabe fazer um pull request no github?
