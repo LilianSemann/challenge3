@@ -3,12 +3,17 @@
 import { useState } from "react"
 
 import TodoTypes from "../types/types" 
-import { insertTodo } from "./functions"
+
+export default function TodoList(props:{tasks:TodoTypes[]}) {
+
+    const [todos, setTodos] = useState(props.tasks)
+    const [newTodo, setNewTodo] = useState<TodoTypes>({    
+        id: todos.length,
+        todo: "",
+        done: false
+    })
 
 
-export default function TodoList(props:{todos:TodoTypes[]}) {
-
-    const [todos, setTodos] = useState(props.todos)
 
     return (
         <>
