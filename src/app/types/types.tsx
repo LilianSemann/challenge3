@@ -1,4 +1,4 @@
-export default interface TodoTypes {
+export default interface Types {
     id: number,
     todo: string,
     done: boolean

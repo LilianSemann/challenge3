@@ -1,9 +1,5 @@
-import TodoTypes from "../types/types";
+import Types from "../types/types"
 
-export function insertTodo( todo: TodoTypes, todos: TodoTypes[] ) {
-    return [...todos, todo]
-}
-
-export function updateTodo(todo: TodoTypes) {
-    todo.done === true ? false : true
+export function insert(task:Types, tasklist:Types[]) {
+    return [...tasklist, task]
 }
