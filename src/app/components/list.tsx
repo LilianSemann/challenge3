@@ -32,7 +32,7 @@ export default function List(props:{list:Types[]}) {
         setList(updatedList);
       }
 
-    return (
+      return (
         <section className="flex flex-col gap-3">
             <div className="rounded-lg px-2 border-black border">
                 <input type="text" placeholder="Add a new task" onChange={(e) => setNewTodo({...newTodo, todo:e.target.value})} className="outline-none h-10"/>
