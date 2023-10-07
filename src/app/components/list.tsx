@@ -22,6 +22,16 @@ export default function List(props:{list:Types[]}) {
         setNewTodo({...newTodo, id:list[list.length-1].id + 1})
     }, [list])
 
+    function update(task:Types) {
+        task.done = task.done === false ? true : false
+        setList([...list])
+    }
+    
+    function dlt(id: number) {
+        const updatedList = list.filter(i => i.id !== id);
+        setList(updatedList);
+      }
+
     return (
         <section className="flex flex-col gap-3">
             <div className="rounded-lg px-2 border-black border">
@@ -31,9 +41,9 @@ export default function List(props:{list:Types[]}) {
             
             <div>
                 {list.map((t) => (
-                    <ul key={t.id} className="flex gap-5">
-                        <li>{t.id}</li>
-                        <li>{t.todo}</li>
+                    <ul key={t.id} className="flex justify-between py-1 px-2 even:bg-zinc-200">
+                        <button onClick={() => update(t)} className={`${t.done ? 'line-through' : 'normal'} ${t.done ? 'text-gray-500' : 'text-gray-700'}`}>{t.id} {t.todo}</button>
+                        <button onClick={() => dlt(t.id)}>X</button>
                     </ul>
                 ))}
             </div>
