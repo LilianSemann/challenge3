@@ -14,36 +14,48 @@ export default function List(props:{list:Types[]}) {
         done: false
     })
 
+    const [updTodo, setUpdTodo] = useState<Types>()
+
+    //////////////////////////FUNCTIONS//////////////////////////
     function add() {
         setList([...list, newTodo])
     }
 
-    useEffect (() => {
-        setNewTodo({...newTodo, id:list[list.length-1].id + 1})
-    }, [list])
-
-    function update(task:Types) {
+    function toggle(task:Types) {
         task.done = task.done === false ? true : false
         setList([...list])
     }
     
     function dlt(id: number) {
         const updatedList = list.filter(i => i.id !== id);
-        setList(updatedList);
-      }
+        setList(updatedList)
+    }
 
+    function upd(id: number, newValue: string) {
+        const updList = list.map((t) =>
+            t.id === id && t.done === false ? { ...t, todo: newValue } : t
+        );
+        setList(updList);
+      }
+    
+    useEffect (() => {
+        setNewTodo({...newTodo, id:list[list.length-1].id + 1})
+    }, [list])
+    /////////////////////////////////////////////////////////////
+    
     return (
         <section className="flex flex-col gap-3">
             <div className="rounded-lg px-2 border-black border">
-                <input type="text" placeholder="Add a new task" onChange={(e) => setNewTodo({...newTodo, todo:e.target.value})} className="outline-none h-10"/>
-                <button onClick={() => add()}>add</button>
+                <input type="text" placeholder="Add a new task" onChange={(e) => setNewTodo({...newTodo, todo:e.target.value})} className="outline-none h-10 w-[90%]"/>
+                <button onClick={() => add()} className="w-[10%]">add</button>
             </div>
             
             <div>
                 {list.map((t) => (
-                    <ul key={t.id} className="flex py-1 px-2 even:bg-zinc-200">
-                        <button className="w-[10%] text-start">e</button>
-                        <button onClick={() => update(t)} className={`${t.done ? 'line-through' : 'normal'} ${t.done ? 'text-gray-500' : 'text-gray-700'} w-[80%] text-start`}>{t.id} {t.todo}</button>
+                    <ul key={t.id} className="flex py-1 px-2 even:bg-zinc-200 items-center">
+                        <input type="checkbox" onChange={() => toggle(t)} className="w-[10%] h-3"/>
+                        <input value={t.todo} onChange={(e) => upd(t.id, e.target.value)} 
+                            className={`${t.done ? 'line-through' : 'normal'} ${t.done ? 'text-gray-500' : 'text-gray-700'} w-[80%] text-start bg-transparent capitalize outline-none`}/>
                         <button onClick={() => dlt(t.id)} className="w-[10%]">x</button>
                     </ul>
                 ))}
