@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-
 import Types from "../types/types"
 
 export default function List(props:{list:Types[]}) {

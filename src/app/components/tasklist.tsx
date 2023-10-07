@@ -1,5 +1,5 @@
-import Types from "../types/types";
-import List from "./list";
+import Types from "../types/types"
+import List from "./list"
 
 export default function Tasklist() {
 
