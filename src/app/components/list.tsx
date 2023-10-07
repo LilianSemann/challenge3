@@ -41,9 +41,10 @@ export default function List(props:{list:Types[]}) {
             
             <div>
                 {list.map((t) => (
-                    <ul key={t.id} className="flex justify-between py-1 px-2 even:bg-zinc-200">
-                        <button onClick={() => update(t)} className={`${t.done ? 'line-through' : 'normal'} ${t.done ? 'text-gray-500' : 'text-gray-700'}`}>{t.id} {t.todo}</button>
-                        <button onClick={() => dlt(t.id)}>X</button>
+                    <ul key={t.id} className="flex py-1 px-2 even:bg-zinc-200">
+                        <button className="w-[10%] text-start">e</button>
+                        <button onClick={() => update(t)} className={`${t.done ? 'line-through' : 'normal'} ${t.done ? 'text-gray-500' : 'text-gray-700'} w-[80%] text-start`}>{t.id} {t.todo}</button>
+                        <button onClick={() => dlt(t.id)} className="w-[10%]">x</button>
                     </ul>
                 ))}
             </div>
