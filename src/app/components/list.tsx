@@ -14,9 +14,6 @@ export default function List(props:{list:Types[]}) {
         done: false
     })
 
-    const [updTodo, setUpdTodo] = useState<Types>()
-
-
     function add() {
         setList([...list, newTodo])
     }
@@ -53,7 +50,7 @@ export default function List(props:{list:Types[]}) {
             <div>
                 {list.map((t) => (
                     <ul key={t.id} className="flex py-1 px-2 even:bg-zinc-200 items-center">
-                        <input type="checkbox" onChange={() => toggle(t)} className="w-[10%] h-3"/>
+                        <input type="checkbox" checked={t.done} onChange={() => toggle(t)} className="w-[10%] h-3"/>
                         <input value={t.todo} onChange={(e) => upd(t.id, e.target.value)} 
                             className={`${t.done ? 'line-through' : 'normal'} ${t.done ? 'text-gray-500' : 'text-gray-700'} w-[80%] text-start bg-transparent capitalize outline-none`}/>
                         <button onClick={() => dlt(t.id)} className="w-[10%]">x</button>
