@@ -1,4 +1,4 @@
-export default interface Types {
+export default interface IList {
     id: number,
     todo: string,
     done: boolean
