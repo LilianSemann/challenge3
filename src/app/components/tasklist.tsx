@@ -1,9 +1,9 @@
-import Types from "../types/types";
+import IList from "../types/typelist";
 import List from "./list";
 
 export default function Tasklist() {
 
-    let tasklist:Types[] = [
+    let tasklist:IList[] = [
         {id: 0, todo: "aaa", done: false},
         {id: 1, todo: "bbb", done: false},
         {id: 2, todo: "ccc", done: true},
