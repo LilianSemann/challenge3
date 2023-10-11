@@ -36,7 +36,7 @@ export default function List(props:{list:IList[]}) {
       }
     
     useEffect (() => {
-        setNewTodo({...newTodo, id:list[list.length-1].id + 1})
+        setNewTodo({...newTodo, id:list.length})
     }, [list])
     
     

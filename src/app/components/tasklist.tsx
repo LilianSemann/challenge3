@@ -7,7 +7,7 @@ export default function Tasklist() {
         {id: 0, todo: "aaa", done: false},
         {id: 1, todo: "bbb", done: false},
         {id: 2, todo: "ccc", done: true},
-        {id: 3, todo: "ddd", done: false},
+        {id: 3, todo: "ddd", done: false}
     ]
 
     return (
