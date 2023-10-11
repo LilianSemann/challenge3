@@ -24,7 +24,7 @@ export default function List(props:{list:IList[]}) {
     }
     
     function dlt(id: number) {
-        const updatedList = list.filter(i => i.id !== id);
+        const updatedList = list.filter(i => i.id != id);
         setList(updatedList)
     }
 
