@@ -50,6 +50,7 @@ export default function List(props:{list:IList[]}) {
             <div>
                 {list.map((t) => (
                     <ul key={t.id} className="flex py-1 px-2 even:bg-zinc-200 items-center">
+                        <p>{t.id}</p>
                         <input type="checkbox" defaultChecked={t.done} onClick={() => toggle(t)} className="w-[10%] h-3"/>
                         <input value={t.todo} onChange={(e) => upd(t.id, e.target.value)}
                             style={t.done ? {textDecorationLine: "line-through", color: "rgb(107 114 128)"} : {textDecorationLine: "none", color: "rgb(55 65 81)"}}
